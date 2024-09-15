@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="External.css">
+    <!--google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .check_area {
+            display: none;
+        }
+
+        /*background Image*/
+        body{
+            background-image: url("backgroundImg.png");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;}
+
+        /*Prize Calculator Option*/
+            .D1{
+        font-family:'Times New Roman', Times, serif;
+        color: rgb(255, 255, 255); 
+        padding: 1%;
+       font-size: 1em;
+       letter-spacing: 0.8em;
+       margin-left: 40%;
+       
+      
+      
+        }
+
+        /*main table*/
+
+            #t01 {
+        font-family: 'Times New Roman', Times, serif;font-size: 175%;
+        background-color:rgba(242, 241, 241, 0.5);
+        border-collapse: collapse;
+        width: 55%;
+        
+        
+        }
+
+        #t01 td, #t01 th {
+        border: 3px solid rgb(0, 0, 0);
+        padding: 8px;
+        }
+
+        #t01 th{background-color:rgb(61, 59, 58);color:azure}
+        #t01 tr:hover {background-color: #c8a636a6;
+           }
+
+        /*Form Option*/
+        #buy_form{font-size: 25px;
+        width: 45%;   
+        border: 2px solid #fff;
+        border-radius: 15px;
+        padding:3%;
+        margin-left: 25%;
+
+        }
+
+        .question{
+            color:#fff;
+        }
+
+        .Yes{
+            color: #fff;
+        }
+
+        .check_area{
+            color: #ffffff;
+        }
+
+        .check_area_print{
+            color: #fff;
+        }
+        /*Prize Calculator Image*/
+        .wave{background: url(Art.jpg);
+    background-size: 200px 100px;
+    background-repeat: repeat-x;
+  
+    
+}
+
+.wave.wave1{
+    animation: animate 30s linear infinite;
+   
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: 600px; 
+    }
+}
+
+.main .wave.wave1 .D1 h1{
+    font-family: "Bebas Neue", sans-serif;
+}
+/*Radio Buttons in form*/
+.radio-a{
+    padding-left: 10%;
+    padding-top: 20px;
+}
+
+.Yes{
+    padding-bottom: 10px;
+}
+
+.circle{
+        position: relative;
+        cursor: pointer;
+        font-size: 1em;
+        user-select: none;
+        
+    }
+
+    .circle input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.check {
+    position: absolute;
+    bottom: 08px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+        }
+
+.circle:hover input ~ .check {
+    background-color: #6dff41;
+        }
+
+.circle input:checked ~ .check {
+    background-color: #ffc508;
+        }
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+        }
+
+
+.circle input:checked ~ .check:after {
+    display: block;
+    }
+
+.circle .check:after {
+ 	top: 2.5px;
+	left: 2.5px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgb(0, 0, 0);
+    }
+
+    .Yes1{
+        padding-left:5%;
+    }
+
+    .No1{
+        padding-left: 5%;
+    }
+    .Y{transition: 0.6s;}
+    .N{transition: 0.6s;}
+
+/*Number of Arts Options*/
+    .ticks{
+    padding-left:10%;
+    font-size: 20px;}
+
+.ticks label{
+    cursor: pointer; 
+    display:flex;
+    }
+
+.ticks input[type="checkbox"]{
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    transition: transform 0.3s ease;
+    }
+
+.ticks label::before{
+    content:'';
+    width: 0.8em;
+    height: 0.8em;
+    border:.05em solid #ffffff;
+    border-radius: 0.15em; 
+    margin-right: 0.5em;}
+
+.ticks label:hover::before,
+.ticks input[type='checkbox']:hover + label::before{
+    background-color: #39ec11a6;
+    }
+
+.ticks input[type='checkbox']:checked + label::before{
+    background-color: goldenrod;
+    content: '\002714';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.ticks input[type='checkbox']:focus + label::before{
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    }
+
+    .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8{transition: transform 0.3s ease;}
+
+    /*Button*/
+
+    .button a{position: relative;
+    background: #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; 
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.6s;
+    }
+.button a:hover{
+    background: var(--clr);
+    color: var(--clr);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
+     
+}
+.button a:before{
+    content:'';
+    position:absolute;
+    inset:2px;
+    background: #27282c;
+}
+.button a span{
+    position: relative;
+    z-index: 1;
+}
+
+.button a i{
+    position: absolute;
+    inset:0;
+    display: block;
+}
+.button a i::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.button a:hover i::before{
+    width:20px;
+    left:20%;
+}
+.button a i::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.button a:hover i::after{
+    width:20px;
+    left:20%;
+}
+.button a i::after{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translate(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.button a:hover i::after{
+    width:20px;
+    left:80%;
+}
+
+
+
+    </style>
+
+    <script>
+           $(document).ready(function(){
+
+            /*ticks animation in form*/
+    $('.c1').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c1').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c1').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.c2').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c2').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c2').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.c3').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c3').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c3').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.c4').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c4').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c4').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.c5').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c5').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c5').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.c6').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c6').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c6').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });$('.c7').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c7').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c7').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.c8').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.c8').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.c8').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+
+    /*Radio buttons amimation in Form*/
+
+    $('.Y').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.Y').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.Y').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+    $('.N').mouseenter(function(){
+        $(this).addClass('scale-in');
+        $(this).removeClass('scale-out');
+    });
+    $('.N').mouseleave(function(){
+        $(this).addClass('scale-out');
+        $(this).removeClass('scale-in');
+    });
+    $('.N').on('animationend', function(){
+        $(this).removeClass('scale-out');
+    });
+});
+    </script>
+
+    
+<script>
+
+    function checkWillingness() {
+        const willingness = document.querySelector('input[name="buy_option"]:checked');
+        if (willingness) {
+            const optionValue = willingness.value;
+            if (optionValue === "yes") {
+                document.querySelector('.check_area').style.display = "block";
+                document.getElementById("calculate_btn").style.display = "inline";
+                document.getElementById("continue_btn").style.display = "none";
+            } else if (optionValue === "no") {
+                document.querySelector('.check_area').style.display = "block";
+                document.getElementById("calculate_btn").style.display = "inline";
+                document.getElementById("continue_btn").style.display = "none";
+                document.querySelectorAll('.check_area input[type="checkbox"]').forEach((checkbox) => {
+                    checkbox.addEventListener('change', function () {
+                        if (this.checked) {
+                            document.querySelectorAll('.check_area input[type="checkbox"]').forEach((cb) => {
+                                if (cb !== this) {
+                                    cb.checked = false;
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        } else {
+            alert("Please select an option.");
+        }
+    }
+
+    function calculateTotal() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        let totalPrice = 0;
+        checkboxes.forEach((checkbox) => {
+            totalPrice += parseInt(checkbox.value);
+        });
+        document.getElementById("para").innerHTML = "Total Price: LKR " + totalPrice;
+        // Hide calculate button
+        document.getElementById("calculate_btn").style.display = "none";
+    }
+</script>
+</head>
+
+<body>
+    <div class="bgImg"></div>
+<div class="header">
+<div id="container1">
+    <div class="conta1">
+    <div class="logo">
+        <img src="paintbrush_gold-removebg-preview.png" alt="logo">
+    </div>
+    </div> 
+    <div class="conta2">  
+    <div class="leesa">
+        <h1>LEESA GALLERY</h1>
+    </div>
+</div>
+</div>
+<div class="navigation">
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="Original photography.html">GALLERY</a></li>
+        <li><a href="Calculator.html">CART</a></li>
+        <li><a href="News.html">NEWS</a></li>
+        <li><a href="aboutUs.html">ABOUT</a></li>
+    </ul>
+    </div>
+    </div>
+        <br>
+        <div class="main">
+            <div class="wave wave1">
+        <div class="D1">
+        <h1>Prize Calculator</h1>
+        </div>
+        </div>
+        </div>
+        <br><br><br>
+
+    <table id="t01" border="1" align="center">
+        <div class="D2">
+        <tr>
+            <th>Serial Number</th>
+            <th>Name Of Photo</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Princes Hemamala and Dantha</td>
+            <td>LKR 18,000</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Wild Life</td>
+            <td>LKR 10,000</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>Lord Jesus</td>
+            <td>LKR 15,000</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>The Son's Reflection</td>
+            <td>LKR 14,000</td>
+        </tr>
+        <tr>
+            <td>05</td>
+            <td>Street Fare Frames</td>
+            <td>LKR 8,000</td>
+        </tr>
+        <tr>
+            <td>06</td>
+            <td>Starry Night Over Haputhale</td>
+            <td>LKR 18,000</td>
+        </tr>
+        <tr>
+            <td>07</td>
+            <td>Joyful Bonds</td>
+            <td>LKR 18,000</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>Drummer</td>
+            <td>LKR 15,000</td>
+        </tr>
+        <tr>
+            <td>09</td>
+            <td>The Starry Revers</td>
+            <td>LKR 13,000</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>A Whimsical Girl</td>
+            <td>LKR 12,000</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>The Jaguar</td>
+            <td>LKR 18,000</td>
+        </tr>
+    </table>
+    <br><br><br>
+    <form id="buy_form">
+        <div class="question">
+        <label>Are you willing to buy more than one picture?</label><br>
+        <div class="radio-a">
+            <div class="Yes">
+                <div class="circle">
+                    <div class="Y">
+        <input type="radio" id="yes" name="buy_option" value="yes">
+        <div class="Yes1">
+        <label for="yes">Yes</label></div>
+        <div class="check"></div></div></div></div>
+                    <div class="circle">
+                        <div class="N">
+        <input type="radio" id="no" name="buy_option" value="no">
+        <div class="No1">
+        <label for="no">No</label></div>
+        <div class="check"></div></div></div></div><br><br>
+
+        <div class="check_area">
+            <label>Select the serial numbers of photos you wish to buy</label><br><br>
+            <div class="ticks">
+
+            <div class="c1">
+            <input type="checkbox" id="pic1" value="20000">
+            <label for="pic1">1</label></div><br>
+
+            <div class="c2">
+            <input type="checkbox" id="pic2" value="10000">
+            <label for="pic2">2</label></div><br>
+
+            <div class="c3">
+            <input type="checkbox" id="pic3" value="35000">
+            <label for="pic3">3</label></div><br>
+
+            <div class="c4">
+            <input type="checkbox" id="pic4" value="30000">
+            <label for="pic4">4</label></div><br>
+
+            <div class="c5">
+            <input type="checkbox" id="pic5" value="25000">
+            <label for="pic5">5</label></div><br>
+
+            <div class="c6">
+            <input type="checkbox" id="pic6" value="35000">
+            <label for="pic6">6</label></div><br>
+
+            <div class="c7">
+            <input type="checkbox" id="pic7" value="30000">
+            <label for="pic7">7</label></div><br>
+
+            <div class="c8">
+            <input type="checkbox" id="pic8" value="25000">
+            <label for="pic8">8</label></div><br>
+            </div>
+
+            <br>
+        </div>
+        <div class="check_area_print">
+            <p id="para"></p>
+        </div>
+        <br>
+        <div class="button">
+        <a style="--clr:#daa520" onclick="checkWillingness()" id="continue_btn"><span>Continue</span><i></i></a>
+        <a style="--clr:#daa520;display:none;" onclick="calculateTotal()" style="display: none;" id="calculate_btn"><span>Calculate</span><i></i></a>
+
+    </div>
+    </div>
+        </form>
+        <br><br><br>
+        <div id="footer">
+            <div class="container4">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3 class="h3_2">LEESA GALLERY</h3>
+                        <p class="Fdetail">Email: info@leesagallery.com</p>
+                        <p class="Fdetail">Phone: +94 (112) 123-4567</p>
+                        <p class="Fdetail">Address: No116, Art Street, Kamburupituya, Matara</p>
+                    </div>
+                    <div class="footer-right">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <p class="copyRight" style="position:absolute; margin-left: 2%; color: goldenrod; letter-spacing: 10px;">&#169 2024 LEESA ART GALLERY. All rights reserved.</p>
+            </div>
+           </div>
+
+    
+</body>
+
+</html>

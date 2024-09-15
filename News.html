@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LEESA - News</title>
+
+        <link rel="stylesheet" href="External.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+
+        <!--icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+        <style>
+            .container5{
+                display:inline-block;
+            }
+            .NewsImg{
+                display: flex;
+                margin-left: 70px;
+                margin-right: 70px;
+                
+            }
+            .NewsImg.active.P1{
+                right: 0;
+            }
+            .P1
+            .P2
+            .P3
+            .P4{
+                position:sticky;
+                color: white;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 800px;
+                text-align: justify;
+                letter-spacing: 3px;
+                word-spacing: 4px;
+                line-height: 50px;
+                padding-top: 100px;
+                transition: right 0.5s ease;
+                z-index: 1;
+                
+            }
+            .I1
+            .I2
+            .I3
+            .I4{
+                display: flex;
+            }
+
+            .NewsImg img{
+                width: 300px;
+                height: 400px;
+                border: 2px solid goldenrod;
+                border-radius: 5px;
+                margin: 20px;
+                cursor: pointer;
+
+            }
+            .D{
+                width: 300px;
+                padding: 20px;
+                color: gold;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                transition: transform 2s ease;
+                z-index: 1;
+                display: none;
+            }
+            .D.slide-in-Left{
+                right: 0;
+            }
+            a:link{
+                text-decoration: none;
+            }
+            a:visited{
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: none;
+            }
+            a:active{
+                text-decoration: none;
+            }
+            p.D.P1{
+                line-height: 30px;
+                margin: 0;
+                padding-bottom: 80px;
+            }
+            p.D.P2{
+                line-height: 30px;
+                margin: 0;
+            }
+            p.D.P3{
+                line-height: 30px;
+                margin: 0;
+                padding-bottom: 50px;
+            }
+            p.D.P4{
+                line-height: 30px;
+                margin: 0;
+                padding-bottom: 90px;
+            }
+            
+
+        </style>
+
+        <script src="jquery-3.7.1.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(".NewsImg1").mouseenter(function() {
+                    $(".P1").show(1000);
+                
+                });
+                $(".NewsImg1").mouseleave(function() {
+                    $(".P1").hide(500);
+                
+                });
+                
+            });
+            
+            $(document).ready(function() {
+                $(".NewsImg2").mouseenter(function() {
+                    $(".P2").show(1000);
+                });
+                $(".NewsImg2").mouseleave(function() {
+                    $(".P2").hide(500);
+                
+                });
+            });
+            $(document).ready(function() {
+                $(".NewsImg3").mouseenter(function() {
+                    $(".P3").show(1000);
+                });
+                $(".NewsImg3").mouseleave(function() {
+                    $(".P3").hide(500);
+                
+                });
+            });
+            $(document).ready(function() {
+                $(".NewsImg4").mouseenter(function() {
+                    $(".P4").show(1000);
+                });
+                $(".NewsImg4").mouseleave(function() {
+                    $(".P4").hide(500);
+                
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="bgImg"></div>
+            <div class="header">
+                <div id="container1">
+                    <div class="conta1">
+                        <div class="logo">
+                            <img src="paintbrush_gold-removebg-preview.png" alt="logo">
+                        </div>
+                    </div> 
+                    <div class="conta2">  
+                        <div class="leesa">
+                            <h1>LEESA GALLERY</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="index.html" target="_self">HOME</a></li>
+                        <li><a href="Original photography.html">GALLERY</a></li>
+                        <li><a href="Calculator.html">CART</a></li>
+                        <li><a href="News.html" target="_self">NEWS</a></li>
+                        <li><a href="aboutUs.html" target="_self">ABOUT US</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container5">
+                <div class="NewsImg">
+                    <div class="I1">
+                        
+                            <img src="NewsImg1.png" alt="news1" class="NewsImg1">
+                        
+                        <p class="D P1">
+                            Art enthusiasts gather at New York City's Prestigious Art Gallery for an exclusive auction featuring iconic masterpieces like van Gogh's "Starry Night Over the Rhône," Picasso's "Les Demoiselles d'Avignon," Miró's "Untitled XX," and Rothko's "Untitled (Blue Divided by Blue)." Bidding wars ignite as collectors vie for these cultural treasures, showcasing the enduring allure of fine art. Amidst the excitement, new guardians emerge, securing these priceless works for future generations. As the final gavel falls, attendees depart, 
+                            inspired by the transcendent power of art and eager to continue their journey in the pursuit of beauty and cultural heritage.
+                        </p>
+                    </div>
+                    <div class="I2">
+                        
+                            <img src="NewsImg2.png" alt="news2" class="NewsImg2">
+                        
+                        <p class="D P2">
+                            <u>Join us for a captivating exploration of art's timeless beauty and significance:</u><br>
+                            Host : Dr. Sonali Gupta<br>
+                            Where: Beijing, China<br><br>
+                            Experience:
+
+                            Engaging Keynotes, Interactive Workshops, Thought-Provoking Panels, Networking Opportunities.<br><br>
+                            you're a seasoned expert or a curious novice, 
+                            this event will inspire and educate. Don't miss out—reserve your spot now! For details and registration, 
+                            visit info@itia.com or contact us at +33 323 111 5789.<br><br>Let's uncover the canvas of history together!
+                        </p>
+                    </div>
+                    <div class="I3">
+                        
+                            <img src="NewsImg3.gif" alt="news3" class="NewsImg3">
+                        
+                        <p class="D P3">
+                            <u> Photographic Gems Shine in Paris Auction</u><br>
+                            Paris's Photography Gallery hosts a prestigious auction, showcasing rare photographic treasures from timeless classics to modern compositions. Enthusiasts and collectors delve into the captivating world of visual storytelling captured through the lens of time.
+                            <b>Auction Highlights:</b><br>
+                            Bidding wars ignite as collectors vie for these rare treasures, reflecting appreciation for the artistry within each frame and preserving cultural heritage for future generations.
+                            <br>
+                            <b>Closing Remarks:</b><br>
+                            As the final gavel falls, attendees depart, carrying with them the enduring impact of these extraordinary photographic visions.
+                        </p>
+                    </div>
+                    <div class="I4">
+                        
+                            <img src="NewsImg4.png" alt="news3" class="NewsImg4">
+                        
+                        <p class="D P4">
+                            The auction features sought-after works by artists like Yayoi Kusama, Wu Guanzhong, Cheong Soo Pieng, Liu Kang, Hendra Gunawan, Nyoman Masriadi, and more. Notable pieces include Yayoi Kusama's acrylic on canvas "Pumpkin" and Cheong Soo Pieng's rare mixed media composition "Singapore Chinese Culture"<br>
+                            <b>Masterpiece Fine Art Auction</b><br>
+                            <b>Event</b>: Modern & Contemporary Art Auction<br>
+                            <b>Date</b>: During Singapore Art Week <br>
+                            <b>Details</b>: Masterpiece Auction, known for successful auctions in Jakarta, Singapore, and Malaysia, presents another phenomenal auction featuring modern and contemporary art.<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div id="footer">
+                <div class="container4">
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <h3 class="h3_2">LEESA GALLERY</h3>
+                            <p class="Fdetail">Email: info@leesagallery.com</p>
+                            <p class="Fdetail">Phone: +94 (112) 123-4567</p>
+                            <p class="Fdetail">Address: No116, Art Street, Kamburupituya, Matara</p>
+                        </div>
+                        <div class="footer-right">
+                            <h4 class="Fdetail">Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p class="copyRight" style="position:absolute; margin-left: 2%; color: goldenrod; letter-spacing: 10px;">&#169 2024 LEESA ART GALLERY. All rights reserved.</p>
+                </div>
+            </div>
+    </body>
+</html>

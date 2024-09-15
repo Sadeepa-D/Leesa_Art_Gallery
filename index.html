@@ -1,0 +1,815 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Leesa Gallery-Group No02</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //code to scale in-out login and signup
+            $('.logSign').mouseenter(function () {
+                $(this).addClass('scale-in');
+                $(this).removeClass('scale-out');
+            });
+            $('.logSign').mouseleave(function () {
+                $(this).addClass('scale-out');
+                $(this).removeClass('scale-in');
+            });
+            $('.logSign').on('animationend', function () {
+                $(this).removeClass('scale-out');
+            });
+            //code to scale in-out gif
+            $('.gif').mouseenter(function () {
+                $(this).addClass('scale-in');
+                $(this).removeClass('scale-out');
+            });
+            $('.gif').mouseleave(function () {
+                $(this).addClass('scale-out');
+                $(this).removeClass('scale-in');
+            });
+            $('.gif').on('animationend', function () {
+                $(this).removeClass('scale-out');
+            });
+            //code to scale in-out h3_1
+            $('.h3_1').mouseenter(function () {
+                $(this).addClass('scale-in');
+                $(this).removeClass('scale-out');
+            });
+            $('.h3_1').mouseleave(function () {
+                $(this).addClass('scale-out');
+                $(this).removeClass('scale-in');
+            });
+            $('.h3_1').on('animationend', function () {
+                $(this).removeClass('scale-out');
+            });
+            //code to scale in-out paint of the week img
+            $('.imgHome').mouseenter(function () {
+                $(this).addClass('scale-in');
+                $(this).removeClass('scale-out');
+            });
+            $('.imgHome').mouseleave(function () {
+                $(this).addClass('scale-out');
+                $(this).removeClass('scale-in');
+            });
+            $('.imgHome').on('animationend', function () {
+                $(this).removeClass('scale-out');
+            });
+            //code to scale in-out paint of the week img
+            $('.para1').mouseenter(function () {
+                $(this).addClass('scale-in');
+                $(this).removeClass('scale-out');
+            });
+            $('.para1').mouseleave(function () {
+                $(this).addClass('scale-out');
+                $(this).removeClass('scale-in');
+            });
+            $('.para1').on('animationend', function () {
+                $(this).removeClass('scale-out');
+            });
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                var containerOffset = $('#container2').offset().top;
+                var windowHeight = $(window).height();
+
+
+                if (scroll + windowHeight > containerOffset + 50) {
+                    // desired animation class to elements within container2
+                    $('.paintOfTheWeek').addClass('slide-in-left');
+                    $('.description').addClass('slide-in-left');
+                } else {
+                    // Remove the animation class if scrolling back up
+                    $('.paintOfTheWeek').removeClass('slide-in-left');
+                    $('.description').removeClass('slide-in-left');
+                }
+            });
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                var containerOffset = $('.quote1').offset().top;
+                var windowHeight = $(window).height();
+
+
+                if (scroll + windowHeight > containerOffset + 50) {
+                    // desired animation class to elements within quote1
+                    $('.h3_1').addClass('slide-in-left');
+                } else {
+                    // Remove the animation class if scrolling back up
+                    $('.h3_1').removeClass('slide-in-left');
+                }
+            });
+
+        });
+
+
+    </script>
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yanone+Kaffeesatz:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+
+    <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="External.css">
+
+
+    <style>
+        .gif {
+            width: 1000px;
+            height: 500px;
+            margin-left: 2%;
+            box-shadow: 20px 20px 10px black;
+            border-radius: 0%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .quote1 {
+            height: 20%;
+            background-color: rgba(218, 165, 32, 0.1);
+            padding-top: 1%;
+            padding-bottom: 0.5%;
+            backdrop-filter: blur(0.3px);
+            text-align: center;
+            border-radius: 50px;
+
+
+        }
+
+        .h3_1 {
+            color: goldenrod;
+            font-family: "Reddit Mono", monospace;
+            -webkit-text-stroke: 6% black;
+            font-optical-sizing: none;
+            font-size: x-large;
+            padding-top: 0%;
+            padding-right: 0%;
+            margin-top: 1%;
+            transition: transform 0.3s ease;
+
+
+        }
+
+
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(-5px, 5px);
+            }
+
+            50% {
+                transform: translate(5px, -5px);
+            }
+
+            75% {
+                transform: translate(-5px, 5px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .button {
+            margin-right: 80px;
+
+        }
+
+        .button a {
+            position: relative;
+            background: #ffffff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 10px 20px;
+            transition: 0.6s;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+
+        }
+
+        .button a:hover {
+            background: var(--clr);
+            color: var(--clr);
+            letter-spacing: 0.25em;
+            box-shadow: 0 0 35px var(--clr);
+
+        }
+
+        .button a:before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #27282c;
+        }
+
+        .button a span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button a i {
+            position: absolute;
+            inset: 0;
+            display: block;
+        }
+
+        .button a i::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 80%;
+            width: 10px;
+            height: 4px;
+            background: #27282c;
+            transform: translate(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+        .button a:hover i::before {
+            width: 20px;
+            left: 20%;
+        }
+
+        .button a i::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 80%;
+            width: 10px;
+            height: 4px;
+            background: #27282c;
+            transform: translate(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+        .button a:hover i::after {
+            width: 20px;
+            left: 20%;
+        }
+
+        .button a i::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 10px;
+            height: 4px;
+            background: #27282c;
+            transform: translate(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+        .button a:hover i::after {
+            width: 20px;
+            left: 80%;
+        }
+
+        /* #################################### */
+        .login-form {
+            width:450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px 40px;
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border:2px solid #fff;
+
+
+
+        }
+
+        .login-form h1 {
+            color: aliceblue;
+            font-size: 300%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+
+        .login-form .input-box {
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+
+            outline: none;
+            border: 2px solid #fff;
+            border-radius: 40px;
+            font-size: 16px;
+            color: azure;
+            padding:20px 45px 20px 20px;
+
+        }
+
+        .input-box input::placeholder {
+            color: azure;
+        }
+
+        .login-form .btn {
+            width: 40%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+
+
+
+        }
+
+        .login-form .btn:hover {
+            color: #000000;
+            background-color: rgb(255, 181, 10);
+        }
+
+
+
+        .sign {
+            color: #fff;
+            font-size: 17px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .sign label a {
+            color: #f1d311;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sign label a:hover {
+            text-decoration: underline;
+        }
+
+        /*
+        .log {
+            
+            display: flex;
+            justify-content: center;
+        }
+*/
+        .parent_log_form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .sub {
+            text-align: center;
+        }
+
+        /* ####################################### */
+        .reji_css{
+            width:90%;
+    max-width: 600px;
+    margin-left: 23%;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px 30px;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding-right: 10%;
+    border: 2px solid #fff;
+    padding-top: 50px;
+        }
+
+
+        .reji .Reg{
+    color:#fff;
+    font-size: 40px;
+    padding-left: 30%;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2%;
+    background-color: rgba(72,72,72,0.882);
+    font-weight:600;
+    width:100%;
+    padding-right: 5%;
+}
+
+        input,
+        textarea {
+            width: 140%;
+            padding: 10px;
+            border: 2px solid #ffce0b;
+            font-size: 20px;
+            background-color: rgba(252, 251, 251, 0.215);
+        }
+
+
+        .data {
+            padding-bottom: 20px;
+            padding-right: 30px;
+        }
+
+
+        .radio-a {
+            padding-left: 10%;
+            position: relative;
+        }
+
+
+        .circle {
+            position: relative;
+            cursor: pointer;
+            font-size: 0.8em;
+            user-select: none;
+        }
+
+        .circle input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .check {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 15px;
+            width: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .circle:hover input~.check {
+            background-color: #caa502;
+        }
+
+        .circle input:checked~.check {
+            background-color: #ffc508;
+        }
+
+        .check:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+
+        .circle input:checked~.check:after {
+            display: block;
+        }
+
+        .circle .check:after {
+            top: 2.7px;
+            left: 2.5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgb(0, 0, 0);
+        }
+
+
+        .radio-a .Male .M {
+            margin-left: 3em;
+            font-size: 14px;
+            padding-top: 0.5%;
+        }
+
+
+        .radio-a .Female .F {
+            margin-left: 3em;
+            font-size: 14px;
+            padding-top: 0.5%;
+        }
+
+        #birthday {
+            color: #fff;
+        }
+
+
+        .log_form {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".log").hide();
+            $(".reji").hide();
+
+
+            $(".log2f").click(function () {
+                $(".hide").hide(1000);
+                $(".log").show(1000);
+                $(".reji").hide();
+
+            });
+
+
+            $("#login_btn").click(function () {
+                $(".log").hide(1000);
+                $(".hide").show(1000);
+                $(".reji").hide();
+            });
+
+            $(".sign2").click(function () {
+                $(".log").hide(1000);
+                $(".reji").show(1000);
+                $(".hide").hide(1000);
+            });
+
+            $(".reji_to_log").click(function () {
+                $(".reji").hide(1000);
+                $(".hide").hide(1000);
+                $(".log").show(1000);
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <div class="bgImg"></div>
+    <div class="header">
+        <div id="container1">
+            <div class="conta1">
+                <div class="logo">
+                    <img src="paintbrush_gold-removebg-preview.png" alt="logo">
+                </div>
+            </div>
+            <div class="conta2">
+                <div class="leesa">
+                    <h1>LEESA GALLERY</h1>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="Original photography.html">GALLERY</a></li>
+                <li><a href="Calculator.html">CART</a></li>
+                <li><a href="News.html">NEWS</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+            </ul>
+            <div class="button">
+                <a href="#" style="--clr:#daa520" class="log2f"><span>Login</span><i></i></a>
+                <a href="#" style="--clr:#daa520" class="sign2"><span>Sign-up</span><i></i></a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="log">
+        <div class="parent_log_form">
+            <div class="login-form">
+                <form class="log_form" action="#">
+                    <h1>Login</h1>
+                    <div class="input-box">
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="sub">
+                        <button type="submit" class="btn" id="login_btn">Login</button>
+                    </div>
+                    <br>
+                    <div class="sign">
+                        <label>If you are not register yet<a href="Register.html"> signup </a>here for free
+                        </label>
+                    </div>
+            </div>
+        </div>
+        <!--#############################-->
+        <div>
+            <div id="footer">
+                <div class="container4">
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <h3 class="h3_2">LEESA GALLERY</h3>
+                             <p class="Fdetail">Email: info@leesagallery.com</p>
+                        <p class="Fdetail">Phone: +94 (112) 123-4567</p>
+                        <p class="Fdetail">Address: No116, Art Street, Kamburupituya, Matara</p>
+                        </div>
+                        <div class="footer-right">
+                            <h4 class="Fdetail">Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="copyRight"
+                        style="position:absolute; margin-left: 2%; color: goldenrod; letter-spacing: 10px;">
+                        &#169 2024 LEESA ART GALLERY. All rights reserved.
+                    </p>
+                </div>
+            </div>
+            <!--#############################-->
+        </div>
+    </div>
+    <div class="hide">
+        <div class="cont1">
+            <div class="gif1">
+                <img src="LEESA-ART-WELCOME.gif" alt="welcome Vedio" class="gif" id="gifPopupTrigger">
+            </div>
+        </div>
+
+        <div class="cont2">
+            <div class="quote1">
+                <h3 class="h3_1">Where art speaks, imagination listens. Welcome to LEESA GALLERY, where creativity knows
+                    no bounds.</h3>
+            </div>
+        </div>
+
+        <div id="container2">
+            <div class="paintOfTheWeek">
+                <h1 class="paintText">Paint of the Week</h1>
+                <img src="image.jpg" alt="picture of the week" class="imgHome">
+            </div>
+            <div class="description">
+                <p class="para1">
+                    Marco Ortolan is an Argentine artist (draftsman, painter) who started out as an impressionist
+                    painter (the school in which he began painting), moved through hyperrealism, and today, generally in
+                    the language of realism, is highly personal. Finished with plastic that gives a unique impression.
+                    It does not preclude entry into other themes, such as ``the artist (as a painter) must be
+                    universal'' (which supports Leonardo da Vinci's idea in his theory of painting).
+                    Today, his techniques are loosely expressed, with plasticity and impressionistic tendencies, which
+                    emerge through the process of each composition, such as scraping with a spatula or scratching to
+                    incorporate the tones of the support. The process begins with loose drawings assembled in a grid to
+                    solidify the proportions, then the first tones emerge and from there the plasticity begins to
+                    dominate the scene back and forth until it is adapted to the same artist's demands.
+                </p>
+            </div>
+        </div>
+        <!--#############################-->
+        <div id="footer">
+            <div class="container4">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <h3 class="h3_2">LEESA GALLERY</h3>
+                        <p class="Fdetail">Email: info@leesagallery.com</p>
+                        <p class="Fdetail">Phone: +94 (112) 123-4567</p>
+                        <p class="Fdetail">Address: No116, Art Street, Kamburupituya, Matara</p>
+                    </div>
+                    <div class="footer-right">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                <p class="copyRight"
+                    style="position:absolute; margin-left: 2%; color: goldenrod; letter-spacing: 10px;">
+                    &#169 2024 LEESA ART GALLERY. All rights reserved.
+                </p>
+            </div>
+            </div>
+        </div>
+        <!--#############################-->
+    </div>
+    <div class="reji">
+        <div class="reji_css">
+            <form>
+                <div class="data">
+                    <div class="Reg">Registration Here</div><br>
+
+                    <div class="data">
+                        <label for="name"><b>Full Name</b></label>
+                        <input type="text" id="name" placeholder="Enter Your Name" required>
+                    </div>
+
+                    <div class="data">
+                        <label for="num"><b>Email Address</b></label>
+                        <input type="text" id="maii" placeholder="Enter your Email" required>
+                    </div>
+
+                    <div class="data">
+                        <label for="mail"><b>Birthday</b></label>
+                        <input type="date" id="birthday" placeholder="Enter your Birthday" required>
+                    </div>
+
+                    <label><b>Gender</b></label><br><br>
+                    <div class="radio-a">
+                        <div class="Male">
+                            <label class="circle">
+                                <div class="M"><b>Male</b></div>
+                                <input type="radio" id="male" name="buy_option" value="yes">
+                                <span class="check"></span>
+                            </label>
+                        </div><br>
+
+                        <div class="Female">
+                            <label class="circle">
+                                <input type="radio" id="female" name="buy_option" value="no">
+                                <div class="F"><b>Female</b></div>
+                                <span class="check"></span>
+                            </label>
+                        </div>
+                    </div><br>
+
+                    <div class="data">
+                        <label for="mail"><b>Username</b></label>
+                        <input type="text" id="mail" placeholder="Username" required>
+                    </div>
+
+                    <div class="data">
+                        <label for="mail"><b>Password</b></label>
+                        <input type="password" id="mail" placeholder="Enter a Password" required>
+                    </div>
+
+                    <div class="data">
+                        <label for="mail"><b>Conform Password</b></label>
+                        <input type="password" id="mail" placeholder="Conform Password" required>
+                    </div>
+
+
+                    <div class="data">
+                        <label for="feedback"><b>Recovery Option</b></label>
+                        <textarea class="feedback" rows="5"
+                            placeholder="Enter Recovery Phone number or Email Address"></textarea>
+                    </div>
+
+                    <div class="button">
+                        <a href="#" style="--clr:#daa520" class="reji_to_log"><span>Register</span><i></i></a>
+                    </div>
+                </div>
+            </form>
+        
+    </div>
+
+    <br><br>
+
+    <div id="footer">
+        <div class="container4">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3 class="h3_2">LEESA GALLERY</h3>
+                    <p class="Fdetail">Email: info@leesagallery.com</p>
+                    <p class="Fdetail">Phone: +94 (112) 123-4567</p>
+                    <p class="Fdetail">Address: No116, Art Street, Kamburupituya, Matara</p>
+                </div>
+                <div class="footer-right">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <p class="copyRight" style="position:absolute; margin-left: 2%; color: goldenrod; letter-spacing: 10px;">
+                &#169 2024 LEESA ART GALLERY. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
